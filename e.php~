@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form methode="get">
+<?php
+$xml=new DomDocument("1.0","UTF-8");
+$xml->load("ee.xml");
+?>
+<input name="name" id="name" type="text" placeholder="Votre nom Complet"/><br>
+<input name="email" id="email" type="email" placeholder="Votre email"/><br>
+<input name="tel" id="tel" type="tel" placeholder="Votre numero de telephone"/><br>
+<textarea rows="4" cols="350" name="add" id="add" placeholder="votre adresse complète"></textarea><br>
+<select name="lang" id="lang">
+  <option value="Arab">Arab</option>
+  <option value="Francais">Francais</option>
+  <option value="Anglais">Anglais</option>
+  <option value="Espagnole">Espagnole</option>
+  <option value="Italienne">Italienne</option>
+  <option value="Allemande">Allemande</option>
+  <option value="Japonais">Japonais</option>
+
+</select>
+
+<br><input type="submit" value="S'inscrire" name="butt" id="butt"> 
+
+</form>
+
+<?php
+if(isset($_GET['butt'])){
+
+
+$infos = $xml ->createElement("infos");
+$infos = $xml ->appendChild($infos);
+
+$name = $xml ->createElement("name","ffff");
+$name = $infos ->appendChild($name);
+
+$email = $xml -> createElement("email","fdsfds");
+$email = $infos ->appendChild($email);
+
+$tel = $xml -> createElement("tel","5646456");
+$tel = $infos ->appendChild($tel);
+
+$add = $xml -> createElement("add","798798");
+$add = $infos ->appendChild($add);
+/*
+$lang = $xml -> createElement("lang",$_POST['lang']));
+$lang = $add ->appendChild($lang);
+*/
+$xml->FormatOutput=true;
+$string_value=$xml->saveXML();
+$xml->save("ee.xml");	
+echo "okkk";
+}
+?>

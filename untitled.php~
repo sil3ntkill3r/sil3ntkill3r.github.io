@@ -1,0 +1,17 @@
+<?php
+$xml=new DomDocument();
+$xml->load("ee.xml");
+
+$infos = $xml ->createElement("infos");
+$infos = $xml ->appendChild($infos);
+
+$user = $xml ->createElement("user","tele777");
+$user = $infos ->appendChild($item);
+
+$pass = $xml -> createElement("pass","f888888");
+$pass = $infos ->appendChild($pass);
+
+$xml->FormatOutput=true;
+$string_value=$xml->saveXML();
+$xml->save("ee.xml");
+?>
