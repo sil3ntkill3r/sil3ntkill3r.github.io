@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="styles.css">
       <script src="jquery-latest.min.js" type="text/javascript"></script>
       <script src="script.js"></script>
-      <title>Test22</title>
+      <title>Test</title>
       <style type="text/css">
       .hidden{display:none;}
       .shown{display:inline;}
